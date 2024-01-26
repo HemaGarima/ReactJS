@@ -29,7 +29,7 @@ export default function TextForm(props) {
   // setText("Enter text here 2"); // correct method to change the state
   return (
     <>
-      <div className="container">
+      <div className="container" style={{color : props.mode === 'light'?'black':'white'}}>
         <h2>{props.heading}</h2>
         <div className="mb-3">
           <textarea
@@ -38,6 +38,7 @@ export default function TextForm(props) {
             className="form-control"
             rows="8"
             value={text}
+            style={{backgroundColor : props.mode === 'light'?'white':'grey' , color : props.mode === 'light'?'black':'white'}}
           ></textarea>
         </div>
         <button className="btn btn-primary mx-2" onClick={handleUpClick}>
@@ -53,14 +54,14 @@ export default function TextForm(props) {
           Remove Extra Spaces
         </button>
       </div>
-      <div className="container my-2">
+      <div className="container my-2" style={{color : props.mode === 'light'?'black':'white'}}>
         <h1>Your text summar</h1>
         <p>
           {text.split(" ").length} words and {text.length} characters
         </p>
         <p>{0.008 * text.split(" ").length} minutes read</p>
         <h2>Preview</h2>
-        <p>{text}</p>
+        <p>{text.length>0?text:"Enter something in the textbox above to preview it here."}</p>
       </div>
     </>
   );
