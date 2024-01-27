@@ -19,12 +19,20 @@ function App() {
     if(mode === 'light'){
       setmode('dark');
       document.body.style.backgroundColor = 'rgb(15, 33, 68)';
-      showAlert("Dark mode has been enabled" , "success")
+      showAlert("Dark mode has been enabled" , "success");
+      document.title = 'TextUtils - Dark Mode';
+      // setInterval(()=>{
+      //   document.title = 'TextUtils is Amazing Mode';
+      // },2000);
+      // setInterval(()=>{
+      //   document.title = 'Install TextUtils Now';
+      // },1500);
     }
     else{
       setmode('light');
       document.body.style.backgroundColor = 'white';
-      showAlert("Light mode has been enabled" , "success")
+      showAlert("Light mode has been enabled" , "success");
+      document.title = 'TextUtils - Light Mode';
     }
   }
   
